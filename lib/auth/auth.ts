@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { betterAuth } from "better-auth";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
 import { headers } from "next/headers";
@@ -10,8 +11,8 @@ const client = mongooseInstance.connection.getClient();
 const db = client.db();
 
 export const auth = betterAuth({
-  database: mongodbAdapter(db, {
-    client,
+  database: mongodbAdapter(db as any, {
+    client: client as any,
   }),
   session: {
     cookieCache: {
