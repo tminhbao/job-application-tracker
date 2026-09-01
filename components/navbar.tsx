@@ -1,8 +1,21 @@
+"use client";
+
 import { Briefcase } from "lucide-react";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
+import { Avatar, AvatarFallback } from "./ui/avatar";
+import { useSession } from "@/lib/auth/auth-client";
+import SignOutButton from "./sign-out-btn";
+
 export default function Navbar() {
-    return (
+  const { data: session } = useSession();
+  return (
     <nav className="border-b border-gray-200 bg-white">
       <div className="container mx-auto flex h-16 items-center px-4 justify-between">
         <Link
@@ -13,7 +26,7 @@ export default function Navbar() {
           Job Tracker
         </Link>
         <div className="flex items-center gap-4">
-          {/* {session?.user ? (
+          {session?.user ? (
             <>
               <Link href="/dashboard">
                 <Button
@@ -68,7 +81,7 @@ export default function Navbar() {
                 </Button>
               </Link>
             </>
-          )} */}
+          )}
         </div>
       </div>
     </nav>
