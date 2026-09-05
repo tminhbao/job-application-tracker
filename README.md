@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎯 CareerTrack — Modern Job Application Tracker
 
-## Getting Started
+An all-in-one, production-ready job application tracking system designed to streamline your career search. Built with the latest **Next.js 16 (App Router)**, **MongoDB**, **TypeScript**, and **Tailwind CSS**.
 
-First, run the development server:
+---
+
+## 🌟 Overview
+
+Searching for a job can quickly become overwhelming with dozens of applications across multiple platforms. **CareerTrack** provides a centralized, intuitive dashboard to help job seekers organize, track, and analyze their job application status in real-time.
+
+### ✨ Key Features
+
+- 📊 **Interactive Analytics Dashboard**: Visual statistics on application statuses (Applied, Interviewing, Offered, Rejected).
+- 📝 **Full Application CRUD**: Create, read, update, and delete application entries with rich details (Job Title, Company, Salary Range, Location, Job URL, Notes).
+- 🔍 **Advanced Filtering & Search**: Instant filtering by status, date applied, or company name.
+- ⚡ **Next.js 16 App Router & Server Actions**: Blazing fast rendering and seamless database mutations without extra API boilerplate.
+- 🗄️ **MongoDB & Mongoose**: Secure and scalable document storage for application data.
+- 🎨 **Modern Responsive UI**: Built with Tailwind CSS and Shadcn UI components for high accessibility and dark mode aesthetics.
+- 🔐 **Authentication & Security**: Protected client and server routes ensuring personal application data stays private.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 16 (React 19)
+- **Language**: TypeScript
+- **Database**: MongoDB & Mongoose
+- **Styling**: Tailwind CSS
+- **Deployment**: Vercel
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to set up and run the project locally on your machine.
+
+### Prerequisites
+
+Ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (v18.0 or higher)
+- [npm](https://www.npmjs.com/) or [pnpm](https://pnpm.io/)
+- A free [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) database cluster
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/job-application-tracker.git
+cd job-application-tracker
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+# or
+pnpm install
+```
+
+### 3. Configure Environment Variables
+
+Create a `.env.local` file in the root folder and configure your MongoDB connection URL:
+
+```env
+MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/job_tracker?retryWrites=true&w=majority
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+```
+
+> **Note**: Make sure to replace `<username>` and `<password>` with your actual MongoDB Atlas credentials.
+
+### 4. Run the Development Server
 
 ```bash
 npm run dev
 # or
-yarn dev
-# or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 Project Structure
 
-## Learn More
+```text
+├── app/                  # Next.js 16 App Router (pages & layouts)
+│   ├── (auth)/           # Authentication routes
+│   ├── dashboard/        # Dashboard view & tracking management
+│   ├── api/              # Route handlers / API routes
+│   └── layout.tsx        # Global layout
+├── components/           # Reusable UI components
+│   ├── ui/               # Base UI components
+│   └── tracker/          # Specific components for tracking logic
+├── lib/                  # Database connections and utility functions
+│   ├── mongodb.ts        # MongoDB client configuration
+│   └── actions/          # Next.js Server Actions
+├── models/               # Mongoose schemas (Job, User, etc.)
+└── public/               # Static assets
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌐 Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The easiest way to deploy this Next.js app is via the [Vercel Platform](https://vercel.com/new).
 
-## Deploy on Vercel
+1. Push your code to GitHub.
+2. Import the repository into Vercel.
+3. Set your Environment Variables (`MONGODB_URI`).
+4. Click **Deploy**.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🙏 Acknowledgments
+
+Special thanks to the open-source community and educational resources for inspiring this project workflow. <sup>[[ref](https://www.youtube.com/watch?v=vCIsrOGNhas)]</sup>
